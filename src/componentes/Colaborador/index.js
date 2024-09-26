@@ -1,3 +1,4 @@
+import React from 'react';
 import './Colaborador.css'
 
 const Colaborador = ({ nome, imagem, cargo }) => {

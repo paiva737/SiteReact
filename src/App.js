@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState } from 'react';
 import Banner from './componentes/Banner';
 import Formulario from './componentes/Formulario';
