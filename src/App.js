@@ -4,40 +4,48 @@ import Banner from "./componentes/Banner";
 import Formulario from "./componentes/Formulario";
 import Rodape from "./componentes/Rodape";
 import Time from "./componentes/Time";
+import { v4  as uuidv4 } from 'uuid';
 
 function App() {
 
   const [times, setTimes] = useState([
     {
+      id: uuidv4(),
       nome: 'Programação',
       cor: '#57C278'
      
     },
     {
+      id: uuidv4(),
       nome: 'Front-End',
       cor: '#82CFFA'
       
     },
     {
+      id: uuidv4(),
       nome: 'Data Science',
       cor: '#A6D157'
       
     },
     {
+      id: uuidv4(),
       nome: 'Devops',
       cor: '#E06B69'
     },
     {
+      id: uuidv4(),
       nome: 'UX e Design',
       cor: '#DB6EBF'
      
     },
     {
+      id: uuidv4(),
       nome: 'Mobile',
       cor: '#FFBA05'
       
     },
     {
+      id: uuidv4(),
       nome: 'Inovação e Gestão',
       cor: '#FF8A29'
       
@@ -45,6 +53,7 @@ function App() {
   ])
   const inicial = [
       {
+        id: uuidv4(),
         nome: 'Rafael Paiva',
         cargo: 'Desenvolvedor front-end',
         imagem: 'http://github.com/paiva737.png',
@@ -58,9 +67,9 @@ function App() {
     console.log('deletando colaborador');
   }
 
-  function mudarCorDoTime(cor, nome){
+  function mudarCorDoTime(cor, id){
     setTimes(times.map(time =>{
-      if(time.nome === nome){
+      if(time.id === id){
         time.cor = cor
       }
       return time
