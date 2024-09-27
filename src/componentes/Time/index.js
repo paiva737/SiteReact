@@ -2,17 +2,16 @@ import React from 'react';
 import Colaborador from '../Colaborador'
 import './Time.css'
 
-const Time = (props) => {
-    const css = { backgroundColor: props.corSecundaria }
-
+const Time = ({ time, colaboradores, aoDeletar }) => {
     return (
-        (props.colaboradores.length > 0) ? <section className='time' style={css}>
-            <h3 style={{ borderColor: props.corPrimaria }}>{props.nome}</h3>
+       colaboradores.length > 0 && <section className='time' style={{ backgroundImage: 'url(/imagens/fundo.png)', backgroundColor: time.corPrimaria }}>
+            <input type='color' className='input-cor' />
+            <h3 style={{ borderColor: time.corSecundaria }}>{time.nome}</h3>
             <div className='colaboradores'>
-                {props.colaboradores.map( colaborador => <Colaborador nome={colaborador.nome} cargo={colaborador.cargo} imagem={colaborador.imagem}/> )}
+                {colaboradores.map((colaborador, indice) => <Colaborador key={indice} colaborador={colaborador} corDeFundo={time.corSecundaria} aoDeletar={aoDeletar} />)}
             </div>
-        </section> 
-        : ''
+        </section>
+
     )
 }
 

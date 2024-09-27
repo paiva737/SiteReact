@@ -1,8 +1,9 @@
 import React from 'react';
-import { useState } from 'react';
-import Banner from './componentes/Banner';
-import Formulario from './componentes/Formulario';
-import Time from './componentes/Time';
+import { useState } from "react";
+import Banner from "./componentes/Banner";
+import Formulario from "./componentes/Formulario";
+import Rodape from "./componentes/Rodape";
+import Time from "./componentes/Time";
 
 function App() {
 
@@ -41,31 +42,36 @@ function App() {
       nome: 'Inovação e Gestão',
       corPrimaria: '#FF8A29',
       corSecundaria: '#FFEEDF'
-    }
+    },
+  ]
+  const inicial = [
+      {
+        nome: 'Rafael Paiva',
+        cargo: 'Desenvolvedor front-end',
+        imagem: 'http://github.com/paiva737.png',
+        time: times[0].nome
+      },
   ]
 
-  const [colaboradores, setColaboradores] = useState([])
+  const [colaboradores, setColaboradores] = useState(inicial)
 
-  const aoNovoColaboradorAdicionado = (colaborador) => {
-    console.log(colaborador)
-    setColaboradores([...colaboradores, colaborador])
+  function deletarColaborador() {
+    console.log('deletando colaborador');
   }
 
+
   return (
-    <div className="App">
+    <div>
       <Banner />
-      <Formulario times={times.map(time => time.nome)} aoColaboradorCadastrado={colaborador => aoNovoColaboradorAdicionado(colaborador)}/>
-
-      {times.map(time => <Time 
-        key={time.nome} 
-        nome={time.nome} 
-        corPrimaria={time.corPrimaria} 
-        corSecundaria={time.corSecundaria} 
-        colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)}
-      />)}   
-
+      <Formulario times={times.map(time => time.nome)} aoCadastrar={colaborador => setColaboradores([...colaboradores, colaborador])} />
+      <section className="times">
+        <h1>Minha organização</h1>
+        {times.map((time, indice) => <Time key={indice} time={time} colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)} aoDeletar={deletarColaborador} />)}
+      </section>
+      <Rodape />
     </div>
   );
 }
+
 
 export default App;
