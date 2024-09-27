@@ -7,7 +7,7 @@ import Time from "./componentes/Time";
 
 function App() {
 
-  const times = [
+  const [times, setTimes] = useState([
     {
       nome: 'Programação',
       corPrimaria: '#57C278',
@@ -43,13 +43,13 @@ function App() {
       corPrimaria: '#FF8A29',
       corSecundaria: '#FFEEDF'
     },
-  ]
+  ])
   const inicial = [
       {
         nome: 'Rafael Paiva',
         cargo: 'Desenvolvedor front-end',
         imagem: 'http://github.com/paiva737.png',
-        time: times[0].nome
+        time: times[1].nome
       },
   ]
 
@@ -59,6 +59,15 @@ function App() {
     console.log('deletando colaborador');
   }
 
+  function mudarCorDoTime(cor, nome){
+    setTimes(times.map(time =>{
+      if(time.nome === nome){
+        time.corSecundaria = cor
+      }
+      return time
+    }))
+  }
+
 
   return (
     <div>
@@ -66,7 +75,11 @@ function App() {
       <Formulario times={times.map(time => time.nome)} aoCadastrar={colaborador => setColaboradores([...colaboradores, colaborador])} />
       <section className="times">
         <h1>Minha organização</h1>
-        {times.map((time, indice) => <Time key={indice} time={time} colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)} aoDeletar={deletarColaborador} />)}
+        {times.map((time, indice) => 
+        <Time
+        mudarCor = { mudarCorDoTime }
+        key={indice}
+        time={time} colaboradores={colaboradores.filter(colaborador => colaborador.time === time.nome)} aoDeletar={deletarColaborador} />)}
       </section>
       <Rodape />
     </div>
