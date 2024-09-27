@@ -4,8 +4,12 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 
 const Colaborador = ({ colaborador, corDeFundo, aoDeletar }) => {
     return (<div className="colaborador">
-        <AiFillCloseCircle size={25} className="deletar" onClick={aoDeletar} />
-        <div className="cabecalho" style={{ backgroundColor: corDeFundo }}>
+        <AiFillCloseCircle 
+        size={25}
+         className="deletar"
+          onClick={() => aoDeletar(colaborador.id)}
+           />
+        <div className="banner" style={{ backgroundColor: corDeFundo }}>
             <img src={colaborador.imagem} alt={colaborador.nome} />
         </div>
         <div className="rodape">
