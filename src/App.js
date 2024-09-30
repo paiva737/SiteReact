@@ -60,6 +60,14 @@ function App() {
         imagem: 'http://github.com/paiva737.png',
         time: times[1].nome
       },
+      {
+        id: uuidv4(),
+        favorito: false,
+        nome: 'Rafael Paiva',
+        cargo: 'Desenvolvedor',
+        imagem: 'http://github.com/paiva737.png',
+        time: times[2].nome
+      },
   ]
 
   const [colaboradores, setColaboradores] = useState(inicial)
