@@ -49,21 +49,21 @@ const Formulario = ({aoCadastrar, times,cadastrarTime}) => {
                     aoAlterado={valor => setImagem(valor)}/>
                 <ListaSuspensa 
                     obrigatorio={true}
-                    label='Times'
+                    label='Linguagens'
                     items={times} 
                     valor={time}
                     aoAlterado={valor => setTime(valor)}/>
-                <Botao texto='Criar card' />
+                <Botao texto='Criar linguagem' />
             </form>
             <form className="formulario" onSubmit={(evento)=>{
                 evento.preventDefault()
                 cadastrarTime({nome: nomeTime, cor: corTime})
             } }>
-                <h2>Preencha os dados para criar um novo time.</h2>
+                <h2>Preencha os dados para criar uma nova linguagem.</h2>
                 <Campo
                     obrigatorio
                     label='Nome'
-                    placeholder='Digite o nome do card '
+                    placeholder='Digite o nome da linguagem'
                     valor={nomeTime}
                     aoAlterado={valor => setNomeTime(valor)}
                     />
@@ -71,11 +71,11 @@ const Formulario = ({aoCadastrar, times,cadastrarTime}) => {
                     obrigatorio
                     type='color'
                     label='Cor' 
-                    placeholder='Digite a cor do time '
+                    placeholder='Digite a cor da nova linguagem '
                     valor={corTime}
                     aoAlterado={valor => setCorTime(valor)}
                     />
-                <Botao texto='Criar um novo card' />
+                <Botao texto='Criar uma nova linguagem' />
             </form>
         </section>
     )

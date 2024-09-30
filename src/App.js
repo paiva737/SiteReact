@@ -11,42 +11,42 @@ function App() {
   const [times, setTimes] = useState([
     {
       id: uuidv4(),
-      nome: 'Programação',
+      nome: 'JavaScript',
       cor: '#57C278'
      
     },
     {
       id: uuidv4(),
-      nome: 'Front-End',
+      nome: 'ReactJs',
       cor: '#82CFFA'
       
     },
     {
       id: uuidv4(),
-      nome: 'Data Science',
+      nome: 'TypeScript',
       cor: '#A6D157'
       
     },
     {
       id: uuidv4(),
-      nome: 'Devops',
+      nome: 'C++',
       cor: '#E06B69'
     },
     {
       id: uuidv4(),
-      nome: 'UX e Design',
+      nome: 'HTML/CSS',
       cor: '#DB6EBF'
      
     },
     {
       id: uuidv4(),
-      nome: 'Mobile',
+      nome: 'Flutter',
       cor: '#FFBA05'
       
     },
     {
       id: uuidv4(),
-      nome: 'Inovação e Gestão',
+      nome: 'Python',
       cor: '#FF8A29'
       
     },
@@ -58,7 +58,7 @@ function App() {
         nome: 'Rafael Paiva',
         cargo: 'Desenvolvedor front-end',
         imagem: 'http://github.com/paiva737.png',
-        time: times[1].nome
+        time: times[0].nome
       },
       {
         id: uuidv4(),
@@ -66,7 +66,7 @@ function App() {
         nome: 'Rafael Paiva',
         cargo: 'Desenvolvedor',
         imagem: 'http://github.com/paiva737.png',
-        time: times[2].nome
+        time: times[1].nome
       },
   ]
 
@@ -109,7 +109,7 @@ function App() {
       aoCadastrar={colaborador => setColaboradores([...colaboradores, colaborador])} 
       />
       <section className="times">
-        <h1>Minha organização</h1>
+        <h1>Linguagens</h1>
         {times.map((time, indice) => 
         <Time
         aoFavoritar={resolverFavorito}
