@@ -54,7 +54,11 @@ const Formulario = ({aoCadastrar, times,cadastrarTime}) => {
                     valor={time}
                     aoAlterado={valor => setTime(valor)}/>
                 <Botao texto='Criar linguagem' />
+                
+
             </form>
+
+
             <form className="formulario" onSubmit={(evento)=>{
                 evento.preventDefault()
                 cadastrarTime({nome: nomeTime, cor: corTime})
