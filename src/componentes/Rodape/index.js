@@ -6,7 +6,7 @@ const Rodape = () => {
      
        <section>
         <p>
-        <AiFillHeart/>  Desenvolvido por Rafael Paiva.
+        <AiFillHeart/>  Desenvolvido por Rafael Paiva. 
         </p>
        </section>
     </footer>)
